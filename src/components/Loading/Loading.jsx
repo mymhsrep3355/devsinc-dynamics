@@ -74,7 +74,7 @@ export default function Loading() {
         transition={{ delay: 1, duration: 0.6 }}
       >
         <Image
-          src="Images/ms-logo.png" 
+          src="/Images/ms-logo.png"
           alt="Microsoft"
           h={{ base: '16px', md: '20px' }}
         />

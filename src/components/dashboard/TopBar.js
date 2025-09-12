@@ -14,7 +14,7 @@ import { SearchIcon, BellIcon, SettingsIcon, QuestionIcon } from '@chakra-ui/ico
 
 export default function TopBar() {
     return (
-        <Box bg="#001433" px={4} py={2} boxShadow="sm">
+        <Box bg="#001433" px={4} py={2} boxShadow="sm" position="sticky" top={0} zIndex={100} >
             <Flex align="center" justify="space-between">
                 <Text fontSize="lg" fontWeight="medium" color="white">
                     Finance and Operations
