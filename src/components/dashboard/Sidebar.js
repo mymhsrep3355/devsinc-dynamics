@@ -26,8 +26,8 @@ const navItems = [
   { label: 'Home', icon: <HomeIcon size={18} /> },
   { label: 'Purchase Order', icon: <PackageIcon size={18} /> },
   { label: 'Transfer Order', icon: <TruckIcon size={18} /> },
-  { label: 'Inventory Management', icon: <WarehouseIcon size={18} /> },
-  { label: 'Customer Management', icon: <UsersIcon size={18} /> },
+  { label: 'Movement Journal', icon: <WarehouseIcon size={18} /> },
+  { label: 'Vendor Management', icon: <UsersIcon size={18} /> },
 ]
 
 export default function Sidebar() {

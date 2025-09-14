@@ -1,3 +1,5 @@
+
+'use client'
 import { PurchaseOrderDetailsProvider } from "context/PurchaseOrderDetailContext"
 
 
