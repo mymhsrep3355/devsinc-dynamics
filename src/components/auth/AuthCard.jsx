@@ -16,7 +16,7 @@ import { useState } from 'react'
 
 export default function AuthCard({ onLogin, onSignup }) {
   const [isSignup, setIsSignup] = useState(false)
-  const formWidth = useBreakpointValue({ base: '95%', sm: '80%', md: '420px' })
+  const formWidth = useBreakpointValue({ base: '90%', sm: '400px', md: '500px' })
 
   const [loginValues, setLoginValues] = useState({ email: '', password: '' })
   const [signupValues, setSignupValues] = useState({ email: '', password: '', confirmPassword: '' })
@@ -28,146 +28,119 @@ export default function AuthCard({ onLogin, onSignup }) {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault()
-    const { email, password} = signupValues;
+    const { email, password } = signupValues
     onSignup?.({ email, password })
   }
 
   return (
     <Box
       w={formWidth}
-      //bg="rgba(255, 255, 255, 0.08)"
-      bg={"white"}
-      p={{ base: 8, md: 10 }}
-      borderRadius="2xl"
-      boxShadow="0 8px 32px rgba(0, 0, 0, 0.25)"
-    //   backdropFilter="blur(14px) saturate(180%)"
-      border="1px solid rgba(255, 255, 255, 0.2)"
-    //   _hover={{
-    //     boxShadow: '0 12px 40px rgba(0, 0, 0, 0.35)',
-    //     transition: 'all 0.3s ease-in-out',
-    //   }}
-      suppressHydrationWarning
+      bg="white"
+      px={{ base: 8, md: 10 }}
+      py={12}
+      border="1px solid"
+      borderColor="gray.200"
+      boxShadow="md"
     >
       <Heading
         size="lg"
-        mb={6}
+        mb={8}
         textAlign="center"
-        color="black"
-        fontWeight="extrabold"
-        letterSpacing="tight"
+        color="gray.800"
+        fontWeight="bold"
+        letterSpacing="-0.5px"
       >
         {isSignup ? 'Create Account' : 'Welcome Back'}
       </Heading>
 
       {isSignup ? (
-        <VStack spacing={5} as="form" onSubmit={handleSignupSubmit}>
+        <VStack spacing={6} as="form" onSubmit={handleSignupSubmit}>
           <FormControl isRequired>
-            <FormLabel color="black">Email</FormLabel>
+            <FormLabel fontSize="sm" color="gray.700">Email</FormLabel>
             <Input
-              name="email"
               type="email"
               placeholder="Enter your email"
               value={signupValues.email}
               onChange={(e) => setSignupValues({ ...signupValues, email: e.target.value })}
-              focusBorderColor="blue.300"
-              bg="rgba(255,255,255,0.15)"
-              border="1px solid rgba(0, 0, 0, 0.3)"
-              _placeholder={{ color: 'gray.500' }}
-              color="black"
-              suppressHydrationWarning
+              focusBorderColor="blue.500"
+              size="md"
             />
           </FormControl>
 
           <FormControl isRequired>
-            <FormLabel color="black">Password</FormLabel>
+            <FormLabel fontSize="sm" color="gray.700">Password</FormLabel>
             <Input
-              name="password"
               type="password"
               placeholder="Enter your password"
               value={signupValues.password}
               onChange={(e) => setSignupValues({ ...signupValues, password: e.target.value })}
-              focusBorderColor="blue.300"
-              bg="rgba(255,255,255,0.15)"
-              border="1px solid rgba(0, 0, 0, 0.3)"
-              _placeholder={{ color: 'gray.500' }}
-              color="black"
-              suppressHydrationWarning
+              focusBorderColor="blue.500"
+              size="md"
             />
           </FormControl>
 
-    
           <Button
             type="submit"
             w="full"
-            size="lg"
-            borderRadius="full"
-            bg="blue.500"
+            size="md"
+            bg="blue.600"
             color="white"
-            _hover={{ bg: 'blue.600' }}
+            _hover={{ bg: 'blue.700' }}
+            fontWeight="semibold"
           >
             Sign Up
           </Button>
         </VStack>
       ) : (
-        <VStack spacing={5} as="form" onSubmit={handleLoginSubmit}>
+        <VStack spacing={6} as="form" onSubmit={handleLoginSubmit}>
           <FormControl isRequired>
-            <FormLabel color="black">Email</FormLabel>
+            <FormLabel fontSize="sm" color="gray.700">Email</FormLabel>
             <Input
-              name="email"
               type="email"
               placeholder="Enter your email"
               value={loginValues.email}
               onChange={(e) => setLoginValues({ ...loginValues, email: e.target.value })}
-              focusBorderColor="blue.300"
-              bg="rgba(255,255,255,0.15)"
-              border="1px solid rgba(0, 0, 0, 0.3)"
-              _placeholder={{ color: 'gray.500' }}
-              color="black"
-              suppressHydrationWarning
+              focusBorderColor="blue.500"
+              size="md"
             />
           </FormControl>
 
           <FormControl isRequired>
-            <FormLabel color="black">Password</FormLabel>
+            <FormLabel fontSize="sm" color="gray.700">Password</FormLabel>
             <Input
-              name="password"
               type="password"
               placeholder="Enter your password"
               value={loginValues.password}
               onChange={(e) => setLoginValues({ ...loginValues, password: e.target.value })}
-              focusBorderColor="blue.300"
-              bg="rgba(255,255,255,0.15)"
-              border="1px solid rgba(0, 0, 0, 0.3)"
-              _placeholder={{ color: 'gray.500' }}
-              color="black"
-              suppressHydrationWarning
+              focusBorderColor="blue.500"
+              size="md"
             />
           </FormControl>
 
           <Button
             type="submit"
             w="full"
-            size="lg"
-            borderRadius="full"
-            bg="blue.500"
+            size="md"
+            bg="blue.600"
             color="white"
-            _hover={{ bg: 'blue.600' }}
+            _hover={{ bg: 'blue.700' }}
+            fontWeight="semibold"
           >
             Login
           </Button>
         </VStack>
       )}
 
-      <Divider my={6} borderColor="whiteAlpha.400" />
+      <Divider my={8} borderColor="gray.200" />
 
-      <Text fontSize="sm" textAlign="center" color="gray.500">
+      <Text fontSize="sm" textAlign="center" color="gray.600">
         {isSignup ? 'Already have an account?' : "Don't have an account?"}{' '}
         <Button
           variant="link"
-          color="blue.200"
-          fontWeight="bold"
+          color="blue.600"
+          fontWeight="medium"
           onClick={() => setIsSignup(!isSignup)}
-          _hover={{ color: 'blue.300', textDecoration: 'underline' }}
+          _hover={{ textDecoration: 'underline' }}
         >
           {isSignup ? 'Log in' : 'Sign up'}
         </Button>

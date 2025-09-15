@@ -52,15 +52,15 @@ export default function CalendarCard() {
       bg={bg}
       border="1px solid"
       borderColor={border}
-      borderRadius="2xl"
+      borderRadius="1xl"
       boxShadow="lg"
       px={5}
       py={4}
       w="full"
-      maxW="600px"
+      maxW="550px"
       mx="auto"
       position="relative"
-      minH="370px"
+      minH="400px"
       overflow="hidden"
     >
       <HStack justify="space-between" mb={2} align="center">

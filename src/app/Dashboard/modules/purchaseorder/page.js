@@ -25,9 +25,7 @@ export default function PurchaseOrder() {
     requestedReceiptDate: new Date(po.RequestedDeliveryDate).toLocaleDateString(),
     modeOfDelivery: po.DeliveryModeId || '--',
   }));
-  // if (loading || refetching) {
-  //   return <LoadingPage /> 
-  // }
+
 
   return (
     <Box>

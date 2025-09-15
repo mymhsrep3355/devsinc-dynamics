@@ -2,6 +2,7 @@
 
 import { ChakraProviders } from "@/chakraProvider"
 import { PurchaseOrderPostProvider } from "context/CreatePurchaseOrderContext"
+import { ItemsProvider } from "context/ItemsContext"
 import { LocationsProvider } from "context/LocationsContext"
 import { PurchaseOrderProvider } from "context/PurchaseOrderContext"
 import { RefreshLoadingProvider } from "context/RefreshLoadingContext"
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
                 <PurchaseOrderProvider>
                   <LocationsProvider>
                     <TermsProvider>
-                      {children}
+                      <ItemsProvider>
+                        {children}
+                      </ItemsProvider>
                     </TermsProvider>
                   </LocationsProvider>
                 </PurchaseOrderProvider>
